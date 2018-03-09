@@ -4,7 +4,6 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    binding.pry
     @teams = Team.all
   end
 
@@ -75,7 +74,7 @@ class TeamsController < ApplicationController
 
     def add_teams
       ["Rick James Bitch", "Midget Kickers", "George W Kush", "Nanny is heating up",
-      "Just the Tip", "Not Payton's Team", "Julio's your daddy", "Swinging Moose Root", "Chlamydia"].each do |team|
+      "Just the Tip", "Not Payton's Team", "Julio's your daddy", "Swinging Moose Root", "Chlamydia", "30 Rack of Matty Ice"].each do |team|
         Team.create(name: team)
       end
     end
