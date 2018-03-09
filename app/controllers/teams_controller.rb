@@ -4,6 +4,7 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
+    binding.pry
     @teams = Team.all
   end
 
@@ -70,5 +71,12 @@ class TeamsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
       params.require(:team).permit(:name, :wins, :losses)
+    end
+
+    def add_teams
+      ["Rick James Bitch", "Midget Kickers", "George W Kush", "Nanny is heating up",
+      "Just the Tip", "Not Payton's Team", "Julio's your daddy", "Swinging Moose Root", "Chlamydia"].each do |team|
+        Team.create(name: team)
+      end
     end
 end
