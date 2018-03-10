@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309190307) do
+ActiveRecord::Schema.define(version: 20180310161231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "career_stats", force: :cascade do |t|
+    t.bigint "team_id"
+    t.integer "reg_wins"
+    t.integer "reg_losses"
+    t.integer "pts_for"
+    t.integer "pts_against"
+    t.integer "moves"
+    t.integer "playoff_appearances"
+    t.integer "playoffs_wins"
+    t.string "playoffs_losses"
+    t.string "integer"
+    t.integer "championship_appearances"
+    t.integer "championship_wins"
+    t.integer "championship_losses"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_career_stats_on_team_id"
+  end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
@@ -38,4 +57,5 @@ ActiveRecord::Schema.define(version: 20180309190307) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "career_stats", "teams"
 end
