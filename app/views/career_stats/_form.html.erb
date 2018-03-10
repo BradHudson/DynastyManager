@@ -1,0 +1,82 @@
+<%= form_with(model: career_stat, local: true) do |form| %>
+  <% if career_stat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(career_stat.errors.count, "error") %> prohibited this career_stat from being saved:</h2>
+
+      <ul>
+      <% career_stat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :team_id %>
+    <%= form.text_field :team_id, id: :career_stat_team_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reg_wins %>
+    <%= form.number_field :reg_wins, id: :career_stat_reg_wins %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reg_losses %>
+    <%= form.number_field :reg_losses, id: :career_stat_reg_losses %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pts_for %>
+    <%= form.number_field :pts_for, id: :career_stat_pts_for %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pts_against %>
+    <%= form.number_field :pts_against, id: :career_stat_pts_against %>
+  </div>
+
+  <div class="field">
+    <%= form.label :moves %>
+    <%= form.number_field :moves, id: :career_stat_moves %>
+  </div>
+
+  <div class="field">
+    <%= form.label :playoff_appearances %>
+    <%= form.number_field :playoff_appearances, id: :career_stat_playoff_appearances %>
+  </div>
+
+  <div class="field">
+    <%= form.label :playoffs_wins %>
+    <%= form.number_field :playoffs_wins, id: :career_stat_playoffs_wins %>
+  </div>
+
+  <div class="field">
+    <%= form.label :playoffs_losses %>
+    <%= form.text_field :playoffs_losses, id: :career_stat_playoffs_losses %>
+  </div>
+
+  <div class="field">
+    <%= form.label :integer %>
+    <%= form.text_field :integer, id: :career_stat_integer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :championship_appearances %>
+    <%= form.number_field :championship_appearances, id: :career_stat_championship_appearances %>
+  </div>
+
+  <div class="field">
+    <%= form.label :championship_wins %>
+    <%= form.number_field :championship_wins, id: :career_stat_championship_wins %>
+  </div>
+
+  <div class="field">
+    <%= form.label :championship_losses %>
+    <%= form.number_field :championship_losses, id: :career_stat_championship_losses %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

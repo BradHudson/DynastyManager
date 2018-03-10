@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :career_stats
   devise_for :users
   resources :teams
   root 'teams#index'
